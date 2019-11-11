@@ -1,0 +1,56 @@
+{
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"$id": "https://github.com/Anadian/supercvar/specs/JSON_schemas/config.schema.json",
+	"title": "Example supercvar configuration JSON schema.",
+	"description": "A simple example of a valid schema to describe a complex configuration object.",
+	"type": "object",
+	"properties": {
+		"meta": {
+			"type": "object",
+			"properties": {
+				"project_name": {
+					"title": "Project Name",
+					"description": "The general-purpose, high-level, title-cased name of the project this config object pertains to.",
+					"type": "string",
+					"default": "supercvar",
+					"$ref": "#/definitions/metacvar"
+				},
+				"version": {
+					"title": "Version",
+					"description": "The Semantic Versioning (semver) version-string for this project.",
+					"type": "string",
+					"default": "v0.0.0",
+					"$ref": [
+						"#/definitions/metacvar",
+						"#/definitions/semver_string"
+					]
+				}
+			},
+			"required": [
+				"project_name",
+				"version"
+			]
+		},		
+		"process": {
+			"type": "object",
+			"properties": {
+				
+			},
+			"required": []
+		}
+	},
+	"required": [],
+	"definitions": {
+		"metacvar": {
+			"title": "Meta-cvar",
+			"description": "A read-only cvar describing the current runtime environment.",
+			"readOnly": true
+		},
+		"version_string": {
+			"title": "Version String.",
+			"description": "A Semantic Versioning 2.0.0 (semver) version string.",
+			"type": "string",
+			"pattern": "^[Vv]?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$"
+		}
+	}
+}

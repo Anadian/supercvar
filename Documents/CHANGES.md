@@ -1,0 +1,1 @@
+2019-11-08 v0.0.1 Added more documents including a more-complete README.md, a LICENSE file, and this CHANGES.md file. Added specs/JSON_schemas directory with config.schema.json. Added scripts directory with hardlinks.sh.
